@@ -18,6 +18,18 @@ class AccountMove(models.Model):
         compute="_compute_lims_order_count", string="LIMS Orders Count"
     )
 
+    def create(self, vals_list):
+        moves = super().create(vals_list)
+        for move in moves:
+            # Collect all sale orders related to the created moves
+            sale_orders = moves.mapped("line_ids.sale_line_ids.order_id")
+            # Fetch all related LIMS orders at once
+            lims_orders = self.env["lims.order"].search(
+                [("sale_order_id", "in", sale_orders.ids)]
+            )
+            move.lims_order_ids |= lims_orders
+        return moves
+
     @api.depends("lims_order_ids")
     def _compute_lims_order_count(self):
         for rec in self:
