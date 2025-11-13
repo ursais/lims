@@ -4,7 +4,7 @@
         <field name="model">lims.order</field>
         <field name="inherit_id" ref="lims.lims_order_form" />
         <field name="arch" type="xml">
-            <xpath expr="//form/header/button[@id='action_cancel']" position="after">
+            <xpath expr="//sheet//div[@name='button_box']" position="inside">
                 <button
                     name="action_open_sale_order"
                     type="object"

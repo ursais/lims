@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <!-- Bromatology Stages -->
     <record id="lims_stage_bromatology_new" model="lims.stage">
@@ -7,7 +7,7 @@
         <field name="stage_type">bromatology</field>
         <field name="description">Initial creation of the bromatology order.</field>
         <field name="is_default">True</field>
-        <field name="company_id" eval="False"/>
+        <field name="company_id" eval="False" />
     </record>
 
     <record id="lims_stage_bromatology_reception" model="lims.stage">
@@ -42,7 +42,9 @@
         <field name="name">Validation</field>
         <field name="sequence">6</field>
         <field name="stage_type">bromatology</field>
-        <field name="description">Validation and quality control of analysis results.</field>
+        <field
+            name="description"
+        >Validation and quality control of analysis results.</field>
     </record>
 
     <record id="lims_stage_bromatology_done" model="lims.stage">

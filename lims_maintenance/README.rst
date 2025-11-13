@@ -38,13 +38,13 @@ laboratory instruments and their maintenance schedules.
 Key Features
 ~~~~~~~~~~~~
 
-- Adds a field ``equipment_id`` on the ``lims.instrument`` model.
-- Links each instrument with an equipment record from the Maintenance
-  module.
-- Displays the associated Maintenance Equipment directly on the
-  instrument form.
-- Enables maintenance tracking, scheduling, and reporting for laboratory
-  instruments.
+-  Adds a field ``equipment_id`` on the ``lims.instrument`` model.
+-  Links each instrument with an equipment record from the Maintenance
+   module.
+-  Displays the associated Maintenance Equipment directly on the
+   instrument form.
+-  Enables maintenance tracking, scheduling, and reporting for
+   laboratory instruments.
 
 **Table of contents**
 
@@ -59,8 +59,8 @@ Prerequisites
 
 Ensure the following modules are installed and configured:
 
-- **lims**
-- **maintenance**
+-  **lims**
+-  **maintenance**
 
 Both are required for this module to function properly.
 
@@ -102,11 +102,11 @@ The instrument is now linked to the selected maintenance equipment.
 Viewing Linked Equipment
 ------------------------
 
-- Open the instrument form.
-- The linked **Maintenance Equipment** appears in the *Maintenance*
-  section.
-- You can click on the linked record to open the full Maintenance
-  Equipment form.
+-  Open the instrument form.
+-  The linked **Maintenance Equipment** appears in the *Maintenance*
+   section.
+-  You can click on the linked record to open the full Maintenance
+   Equipment form.
 
 --------------
 
@@ -154,10 +154,10 @@ Authors
 Contributors
 ------------
 
-- Rodrigo Madrid rmadrid@opensourceintegrators.com
-- Adriana Alpizar aalpizar@opensourceintegrators.com
-- Maxime Chambreuil mchambreuil@opensourceintegrators.com
-- Nikul Chaudhary nchaudhary@opensourceintegrators.com
+-  Rodrigo Madrid rmadrid@opensourceintegrators.com
+-  Adriana Alpizar aalpizar@opensourceintegrators.com
+-  Maxime Chambreuil mchambreuil@opensourceintegrators.com
+-  Nikul Chaudhary nchaudhary@opensourceintegrators.com
 
 Maintainers
 -----------

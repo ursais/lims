@@ -30,7 +30,6 @@ class LimsTemplate(models.Model):
             test_commands.append(fields.Command.create(values))
 
         vals = {
-            "name": f"{self.name} - {fields.Date.today()}",
             "template_id": self.id,
             "operator_id": self.operator_id.id if self.operator_id else False,
             "company_id": self.company_id.id or self.env.company.id,

@@ -34,12 +34,12 @@ The **lims_account** module provides a bridge between the **LIMS
 It introduces a bi-directional link between **LIMS Orders** and
 **Invoices**, enabling users to:
 
-- Associate one or multiple invoices (``account.move``) with one or
-  multiple LIMS orders (``lims.order``).
-- Quickly navigate between LIMS Orders and their corresponding Invoices
-  using smart buttons.
-- View related records directly in each form without leaving the current
-  screen.
+-  Associate one or multiple invoices (``account.move``) with one or
+   multiple LIMS orders (``lims.order``).
+-  Quickly navigate between LIMS Orders and their corresponding Invoices
+   using smart buttons.
+-  View related records directly in each form without leaving the
+   current screen.
 
 **Table of contents**
 
@@ -89,10 +89,10 @@ From a LIMS Order
 👁️ Viewing Linked Records
 =========================
 
-- On an **Invoice**, click the **LIMS Orders** smart button to open all
-  linked LIMS Orders.
-- On a **LIMS Order**, click the **Invoices** smart button to open all
-  linked invoices.
+-  On an **Invoice**, click the **LIMS Orders** smart button to open all
+   linked LIMS Orders.
+-  On a **LIMS Order**, click the **Invoices** smart button to open all
+   linked invoices.
 
 You can navigate back and forth between records easily.
 
@@ -117,10 +117,10 @@ Authors
 Contributors
 ------------
 
-- Rodrigo Madrid rmadrid@opensourceintegrators.com
-- Adriana Alpizar aalpizar@opensourceintegrators.com
-- Maxime Chambreuil mchambreuil@opensourceintegrators.com
-- Nikul Chaudhary nchaudhary@opensourceintegrators.com
+-  Rodrigo Madrid rmadrid@opensourceintegrators.com
+-  Adriana Alpizar aalpizar@opensourceintegrators.com
+-  Maxime Chambreuil mchambreuil@opensourceintegrators.com
+-  Nikul Chaudhary nchaudhary@opensourceintegrators.com
 
 Maintainers
 -----------

@@ -80,7 +80,7 @@ Credits
 Authors
 -------
 
-* Hardik-OSI
+* Open Source Integrators
 
 Contributors
 ------------
