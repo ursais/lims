@@ -4,8 +4,6 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
-from . import lims_stage
-
 
 class LIMSBatch(models.Model):
     _name = "lims.batch"
@@ -63,9 +61,9 @@ class LIMSBatch(models.Model):
         related="stage_id.is_closed",
     )
     priority = fields.Selection(
-        lims_stage.AVAILABLE_PRIORITIES,
+        [("0", "Normal"), ("1", "Low"), ("2", "High"), ("3", "Urgent")],
         index=True,
-        default=lims_stage.AVAILABLE_PRIORITIES[0][0],
+        default="0",
     )
     laboratory_id = fields.Many2one(
         "res.partner",

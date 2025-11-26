@@ -5,8 +5,6 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
-from . import lims_stage
-
 
 class LIMSOrder(models.Model):
     _name = "lims.order"
@@ -74,9 +72,9 @@ class LIMSOrder(models.Model):
         related="stage_id.is_closed",
     )
     priority = fields.Selection(
-        lims_stage.AVAILABLE_PRIORITIES,
+        [("0", "Normal"), ("1", "Low"), ("2", "High"), ("3", "Urgent")],
         index=True,
-        default=lims_stage.AVAILABLE_PRIORITIES[0][0],
+        default="0",
     )
     tag_ids = fields.Many2many(
         "lims.tag",
