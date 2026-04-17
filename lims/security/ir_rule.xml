@@ -18,7 +18,49 @@
     <record id="lims_order_user" model="ir.rule">
         <field name="name">LIMS Orders Entry</field>
         <field name="model_id" ref="model_lims_order" />
-        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        <field name="groups" eval="[(4, ref('lims.group_lims_user'))]" />
+    </record>
+
+    <record id="lims_order_test_comp_rule" model="ir.rule">
+        <field name="name">LIMS Order Tests Entry</field>
+        <field name="model_id" ref="model_lims_order_test" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+    </record>
+
+    <record id="lims_order_test_own_rule" model="ir.rule">
+        <field name="name">LIMS Order Tests Entry (only own)</field>
+        <field name="model_id" ref="model_lims_order_test" />
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        <field name="groups" eval="[(4, ref('lims.group_lims_user_own'))]" />
+    </record>
+
+    <record id="lims_order_test_user" model="ir.rule">
+        <field name="name">LIMS Order Tests Entry</field>
+        <field name="model_id" ref="model_lims_order_test" />
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        <field name="groups" eval="[(4, ref('lims.group_lims_user'))]" />
+    </record>
+
+    <record id="lims_batch_comp_rule" model="ir.rule">
+        <field name="name">LIMS Batches Entry</field>
+        <field name="model_id" ref="model_lims_batch" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+    </record>
+
+    <record id="lims_batch_own_rule" model="ir.rule">
+        <field name="name">LIMS Batches Entry (only own)</field>
+        <field name="model_id" ref="model_lims_batch" />
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        <field name="groups" eval="[(4, ref('lims.group_lims_user_own'))]" />
+    </record>
+
+    <record id="lims_batch_user" model="ir.rule">
+        <field name="name">LIMS Batches Entry</field>
+        <field name="model_id" ref="model_lims_batch" />
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
         <field name="groups" eval="[(4, ref('lims.group_lims_user'))]" />
     </record>
 
