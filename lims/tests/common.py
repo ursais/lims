@@ -7,24 +7,40 @@ from odoo.tests import TransactionCase
 
 class LIMSCommon(TransactionCase):
     @classmethod
+    def _get_or_create_partner(cls, xmlid, fallback_name):
+        """Return the partner at ``xmlid`` or create a synthetic one.
+
+        The original implementation relied exclusively on ``base`` demo data
+        (``base.res_partner_1``…), which makes the suite unusable on any
+        database installed without ``--load-demo``. Falling back to a created
+        partner keeps the tests self-contained.
+        """
+        partner = cls.env.ref(xmlid, raise_if_not_found=False)
+        if partner:
+            return partner
+        return cls.env["res.partner"].create({"name": fallback_name})
+
+    @classmethod
     def setUpClass(cls):
         super().setUpClass()
         # === Partners ===
-        cls.partner_specimen = cls.env.ref(
-            "base.res_partner_10", raise_if_not_found=False
+        cls.partner_specimen = cls._get_or_create_partner(
+            "base.res_partner_10", "LIMS Test Specimen Partner"
         )
-        cls.partner_admin = cls.env.ref("base.partner_admin", raise_if_not_found=False)
-        cls.partner_laboratory = cls.env.ref(
-            "base.res_partner_1", raise_if_not_found=False
+        cls.partner_admin = cls._get_or_create_partner(
+            "base.partner_admin", "LIMS Test Admin Partner"
         )
-        cls.partner_operator = cls.env.ref(
-            "base.res_partner_2", raise_if_not_found=False
+        cls.partner_laboratory = cls._get_or_create_partner(
+            "base.res_partner_1", "LIMS Test Laboratory Partner"
         )
-        cls.partner_operator_4 = cls.env.ref(
-            "base.res_partner_4", raise_if_not_found=False
+        cls.partner_operator = cls._get_or_create_partner(
+            "base.res_partner_2", "LIMS Test Operator Partner"
         )
-        cls.partner_physician = cls.env.ref(
-            "base.res_partner_3", raise_if_not_found=False
+        cls.partner_operator_4 = cls._get_or_create_partner(
+            "base.res_partner_4", "LIMS Test Operator 4 Partner"
+        )
+        cls.partner_physician = cls._get_or_create_partner(
+            "base.res_partner_3", "LIMS Test Physician Partner"
         )
 
         # Assign LIMS role flags for partners
