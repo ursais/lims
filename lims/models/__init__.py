@@ -19,4 +19,5 @@ from . import (
     lims_order,
     lims_batch,
     res_partner,
+    res_users,
 )

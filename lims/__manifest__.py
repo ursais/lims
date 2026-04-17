@@ -27,6 +27,7 @@
         "views/lims_stage.xml",
         "views/lims_tag.xml",
         "views/res_partner.xml",
+        "views/res_users.xml",
         "views/lims_specimen.xml",
         "views/lims_order_test.xml",
         "views/lims_order.xml",
