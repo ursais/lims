@@ -9,8 +9,12 @@ from odoo.addons.lims_sale.tests.common import LIMSCommon
 class TestLIMSSaleOrder(LIMSCommon):
     def setUp(self):
         super().setUp()
-        # Sample partner for test orders
-        self.partner_id = self.env.ref("base.res_partner_12", raise_if_not_found=False)
+        # Sample partner for test orders. ``base.res_partner_12`` only exists
+        # when demo data is loaded; fall back to a fresh partner otherwise so
+        # the suite works on any DB.
+        self.partner_id = self._get_or_create_partner(
+            "base.res_partner_12", "LIMS Sale Test Customer"
+        )
 
         # Create a test Sale Order with multiple products
         self.sale_order = self.env["sale.order"].create(
