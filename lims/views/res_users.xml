@@ -1,0 +1,22 @@
+<odoo>
+    <!-- Adds a LIMS tab on the user form so admins can assign the
+         laboratories a user has access to. Consumed by record rules
+         that filter LIMS records by laboratory_id. -->
+    <record id="view_users_form_lims" model="ir.ui.view">
+        <field name="name">res.users.form.lims</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='preferences']" position="after">
+                <page string="LIMS" name="lims" groups="lims.group_lims_user_own">
+                    <group string="Laboratory Access">
+                        <field
+                            name="lims_laboratory_ids"
+                            widget="many2many_tags"
+                        />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

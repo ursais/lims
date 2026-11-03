@@ -15,6 +15,7 @@ from . import (
     lims_result,
     lims_batch,
     res_partner,
+    res_users,
     lims_template,
     lims_test,
     lims_order,
