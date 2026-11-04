@@ -32,7 +32,7 @@ LIMS Purchase Integration
 ====================================================
 
 This module integrates **Odoo LIMS** with **Purchase Orders**, allowing
-laboratories to sell LIMS services directly as products.
+laboratories to purchase LIMS services directly as products.
 
 Link a LIMS order to a purchase order
 
@@ -50,7 +50,7 @@ Configuration
 ====================================================
 
 This module integrates **Odoo LIMS** with **Purchase Orders**, allowing
-laboratories to sell LIMS services directly as products.
+laboratories to purchase LIMS services directly as products.
 
 Link a LIMS order to a purchase order
 

@@ -3,7 +3,7 @@ LIMS Purchase Integration
 ==========================
 
 This module integrates **Odoo LIMS** with **Purchase Orders**, allowing laboratories
-to sell LIMS services directly as products.  
+to purchase LIMS services directly as products.  
 
 Link a LIMS order to a purchase order
 
